@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: be-scriptrunner
+  labels:
+    app: be-scriptrunner
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: be-scriptrunner
+  template:
+    metadata:
+      labels:
+        app: be-scriptrunner
+    spec:
+      containers:
+        - name: be-scriptrunner
+          image: cloud-container-registry-container-path-placeholder-for-jenkins
+          ports:
+            - name: http
+              containerPort: 8114

@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: be-scriptrunner
+spec:
+  selector:
+    app: be-scriptrunner
+  ports:
+    - protocol: TCP
+      port: 8114
+      targetPort: http
